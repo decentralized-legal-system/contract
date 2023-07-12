@@ -1,3 +1,13 @@
-service : {
-    "greet": (text) -> (text) query;
+type contract = record
+{
+    version : nat;
+    date_issued : text;
+    date_updated : text;
+    contract_text : text;
+};
+
+service :
+{
+    "get": (nat) -> (opt contract) query;
+    "set": (nat, contract) -> (opt contract);
 }
