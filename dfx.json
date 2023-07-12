@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "canisters": {
+    "contract_backend": {
+      "type": "rust",
+      "package": "contract_backend",
+      "candid": "src/contract_backend/contract_backend.did"
+    },
+    "contract_frontend": {
+      "type": "assets",
+      "source": [
+        "src/contract_frontend/assets"
+      ],
+      "dependencies": [
+        "contract_backend"
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}
